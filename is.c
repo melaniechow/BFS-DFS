@@ -26,7 +26,7 @@ int pop(is *s)
   int ret=popped->n;
   //update front of list
   s->ns=popped->next;
-  //il_free(popped);
+  free(popped);
   return ret;
 }
 
