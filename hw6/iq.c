@@ -12,17 +12,18 @@ iq *iq_new()
   return q;
 }
 
-void enqueue(iq *q, int n)
+void enqueue(iq *q,int n)
 {
-  il *end=q->back;
-  end=il_snoc(end,n);
-  //if empty queue, set front to end as well
+  il *old=q->back;
+  il *end=il_singleton(n);
+  //if empty
   if (q->n == 0){
     q->front=end;
+  } else{
+    old->next=end;
   }
-  //update end of queue
-  q->n++;
   q->back=end;
+  q->n++;
 }
 
 int dequeue(iq *q)
@@ -37,7 +38,7 @@ int dequeue(iq *q)
   q->front=old->next;
   q->n--;
   int ret=old->n;
-  //free(old);
+  free(old);
   return ret;
 }
 
