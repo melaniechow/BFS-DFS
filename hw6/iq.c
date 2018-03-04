@@ -36,8 +36,9 @@ int dequeue(iq *q)
     q->front=front->next;
   }
   q->n--;
-  //return first element
-  return front->n;
+  int ret=front->n;
+  il_free(front);
+  return ret;
 }
 
 void iq_show(iq *q)

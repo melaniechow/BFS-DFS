@@ -22,9 +22,11 @@ void push(is *s, int n)
 int pop(is *s)
 {
   //store n value
-  int ret=s->ns->n;
+  il *popped=s->ns;
+  int ret=popped->n;
   //update front of list
-  s->ns=s->ns->next;
+  s->ns=popped->next;
+  il_free(popped);
   return ret;
 }
 
