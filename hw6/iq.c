@@ -29,7 +29,6 @@ void enqueue(iq *q,int n)
 int dequeue(iq *q)
 {
   il *old=q->front;
-  il_show(old);
   //update front of queue
   if (old->next == NULL){
     q->front=NULL;
