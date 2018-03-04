@@ -20,5 +20,6 @@ int main(int argc, char *argv[])
     iq_show(q);
     putchar('\n');
   }
+  iq_free(q);
   return 0;
 }

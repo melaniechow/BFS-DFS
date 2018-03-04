@@ -19,5 +19,6 @@ int main(int argc, char *argv[])
     is_show(s);
     putchar('\n');
   }
+  is_free(s);
   return 0;
 }
