@@ -28,6 +28,7 @@ il *dfs(graph *g, unsigned int start_key)
     //mark v as visited
     v->visited=1;
   }
+  is_free(s);
   return ret;
 }
 
