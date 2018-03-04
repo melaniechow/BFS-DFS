@@ -37,7 +37,7 @@ int dequeue(iq *q)
   }
   q->n--;
   int ret=front->n;
-  //il_free(front);
+  free(front);
   return ret;
 }
 
