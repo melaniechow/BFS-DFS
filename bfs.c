@@ -12,7 +12,6 @@ il *bfs(graph *g, unsigned int start_key)
   il *neighbors;
   int deq;
   enqueue(q,start_key);
-
   while (q->n != 0){
     //dequeue and set V
     deq=dequeue(q);
