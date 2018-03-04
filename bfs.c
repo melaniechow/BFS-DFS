@@ -29,6 +29,7 @@ il *bfs(graph *g, unsigned int start_key)
     //mark v as visited
     v->visited=1;
   }
+  iq_free(q);
   return ret;
 }
 
