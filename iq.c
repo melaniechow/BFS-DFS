@@ -23,9 +23,6 @@ void enqueue(iq *q, int n)
   //update end of queue
   q->n++;
   q->back=end;
-  printf("this is from enqueue-----\n");
-  iq_show(q);
-  printf("------------------------\n");
 }
 
 int dequeue(iq *q)
