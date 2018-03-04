@@ -12,8 +12,7 @@ il *bfs(graph *g, unsigned int start_key)
   il *neighbors;
   int deq;
   enqueue(q,start_key);
-  while (q->n != 0){
-    //dequeue and set V
+  while (q->n){
     deq=dequeue(q);
     v=g->vs[deq];
     //if not yet visited, enqueue the neighbors & add to ret
@@ -23,6 +22,7 @@ il *bfs(graph *g, unsigned int start_key)
       while (neighbors){
         enqueue(q,neighbors->n);
         neighbors=neighbors->next;
+        iq_show(q);
       }
     }
     //mark v as visited
