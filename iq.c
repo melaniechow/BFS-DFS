@@ -24,22 +24,41 @@ void enqueue(iq *q, int n)
   q->back=end;
 }
 
+/*
 int dequeue(iq *q)
 {
-  il *front=q->front;
+  if (q->n == 0){
+    return -1;
+  }
+  il *old=q->front;
   //update front of queue
-  if (front->next == NULL){
+  if (old->next == NULL){
     q->front=NULL;
     q->back=NULL;
   }
   else {
-    q->front=front->next;
+    q->front=old->next;
   }
   q->n--;
-  int ret=front->n;
-  free(front);
+  int ret=old->n;
+  free(old);
   return ret;
 }
+*/
+
+int dequeue(iq *q)
+{
+if (q==NULL){
+return -1;
+}
+il *temp=q->front;
+int ret=q->front->n;
+q->front=q->front->next;
+q->n--;
+free(temp);
+return ret;
+}
+
 
 void iq_show(iq *q)
 {
