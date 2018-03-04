@@ -16,48 +16,34 @@ void enqueue(iq *q, int n)
 {
   il *end=q->back;
   end=il_snoc(end,n);
+  //if empty queue, set front to end as well
   if (q->n == 0){
     q->front=end;
   }
   //update end of queue
   q->n++;
   q->back=end;
+  printf("this is from enqueue-----\n");
+  iq_show(q);
+  printf("------------------------\n");
 }
 
-/*
 int dequeue(iq *q)
 {
-  if (q->n == 0){
-    return -1;
-  }
   il *old=q->front;
+  il_show(old);
   //update front of queue
   if (old->next == NULL){
     q->front=NULL;
     q->back=NULL;
   }
-  else {
-    q->front=old->next;
-  }
+  q->front=old->next;
   q->n--;
   int ret=old->n;
-  free(old);
+  //free(old);
   return ret;
 }
-*/
 
-int dequeue(iq *q)
-{
-if (q==NULL){
-return -1;
-}
-il *temp=q->front;
-int ret=q->front->n;
-q->front=q->front->next;
-q->n--;
-free(temp);
-return ret;
-}
 
 
 void iq_show(iq *q)

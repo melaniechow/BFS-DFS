@@ -16,7 +16,7 @@ il *dfs(graph *g, unsigned int start_key)
     //pop off and set V
     popped=pop(s);
     v=g->vs[popped];
-    //if not yet visited, enqueue the neighbors & add to ret
+    //if not yet visited, push the neighbors & add to ret
     if (!(v->visited)){
       ret=il_snoc(ret,popped);
       neighbors=g->es[popped];
