@@ -22,7 +22,6 @@ il *bfs(graph *g, unsigned int start_key)
       while (neighbors){
         enqueue(q,neighbors->n);
         neighbors=neighbors->next;
-        iq_show(q);
       }
     }
     //mark v as visited
